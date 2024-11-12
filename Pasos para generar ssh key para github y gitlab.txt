@@ -1,0 +1,40 @@
+ssh-keygen -t rsa -b 4096 -C "arturoletonaporras2024@gmail.com
+" -f ~/.ssh/id_rsa_gitlab
+
+cat ~/.ssh/id_rsa_gitlab.pub
+-----
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDxXNT40T4ecXL+MqJyJle9nW8mo+8VbzyJxxLVJ0b6xwtsY3Oeg1uOLiWGINvycFJ7wvM5/L2ZEqMdFDWZ5R7p+SmMI9h4ZHisJFOIjwvCGA1jbQDaVT2X7WFhGBOmLq61cBfzgYTvwDX4X8kjy/bl8Ds+i9u2xS2D+X/MqTDQ4RNoyUkPuDrWKdMHgEmKM4c3PMxk6xkYz4qbDwFZUGIDV0g7+TpuLOBY9KH3oBr3Gs2EGTD2Uj95VRwgTK0/DwnNORUazxlFWjbyuVJHNlgzIrLTcxkQXa1nlRUHzr8dGP+84opHw/Vu0vu6D1z6JHWMGf0JCUcVeHsqmIZzkosyS66NpCn2xQhrjxaJ/DLR3FYsbu/hCW3zNvihhZYwlxqZtOPtyX65Q697czKNx0oHl597oM+KGKUoTukdEPCvFrIEgmiO+t7uObu7GGS3UXC675HMhPxHi1O1jwpuZxtQARN/aPvJ++zhKCNrhi8HoA8UD95+d9P0VpRB0QCRwPbmFtu/NI4IUFYOp+IYmlAHIjYr8WKEfnp9AN2vu9x3khxAdjn3HJSNfYiPV0yRUx4BeToNRtQzN3yGtQamskEEOD6Uu6hG2lZbIKk08WCC4t5mDxiEI55kJD+SVw1DOavbZSYMpGiLw/H7WZa3B9/zduzojv9bawGw5EG3YZm4w== arturoletonaporras2024@gmail.com
+
+----
+
+nano ~/.ssh/config
+
+# Configuración para GitHub
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
+
+# Configuración para GitLab
+Host gitlab.com
+    HostName gitlab.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_gitlab
+
+
+verificamos
+ssh -T git@gitlab.com
+
+escribe yes
+
+para subir a git lab 
+
+git branch
+
+git add .
+
+git comit = blablá
+
+luego ojo si o si el sigiento comando 
+git push --set-upstream gitlab main
